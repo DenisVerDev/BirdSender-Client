@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="MessangerClient.Controls.ChannelList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MessangerClient.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Width="634">
+    <UserControl.Resources>
+        <ResourceDictionary Source="Dictionary1.xaml"></ResourceDictionary>
+    </UserControl.Resources>
+    <ScrollViewer  x:Name="scrollviewer" Template="{StaticResource scroll}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" MouseEnter="scrollviewer_MouseEnter" MouseLeave="scrollviewer_MouseEnter">
+        <StackPanel x:Name="list" Orientation="Vertical" Background="White">
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

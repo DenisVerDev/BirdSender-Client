@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="MessangerClient.Controls.UserEnterMsg"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MessangerClient.Controls"
+             xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Height="60">
+    <UserControl.Resources>
+
+        <Storyboard x:Key="smic">
+            <ColorAnimation IsAdditive="True" To="#6CC4C7" Duration="0:0:0.5" Storyboard.TargetName="body" Storyboard.TargetProperty="Background.Color"></ColorAnimation>
+            <DoubleAnimation From="40" To="50" Duration="0:0:0.5" AutoReverse="True"  RepeatBehavior="Forever" Storyboard.TargetName="body" Storyboard.TargetProperty="Width"></DoubleAnimation>
+            <DoubleAnimation From="40" To="50" Duration="0:0:0.5" AutoReverse="True" RepeatBehavior="Forever" Storyboard.TargetName="body" Storyboard.TargetProperty="Height"></DoubleAnimation>
+            <ThicknessAnimation IsAdditive="True" To="-10" Duration="0:0:0.5" RepeatBehavior="Forever" AutoReverse="True" Storyboard.TargetName="body" Storyboard.TargetProperty="Margin"></ThicknessAnimation>
+        </Storyboard>
+
+
+
+        <ControlTemplate TargetType="Button" x:Key="btnfile">
+            <Border x:Name="body" Background="Transparent">
+                <ContentPresenter x:Name="content" Content="{TemplateBinding Content}"></ContentPresenter>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Content" TargetName="content">
+                        <Setter.Value>
+                            <svgc:SvgViewbox Width="28" Height="28" Source="../Resources/btnfile2.svg">
+                            </svgc:SvgViewbox>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate TargetType="Button" x:Key="btnmic">
+            <Border x:Name="body" Background="Transparent" CornerRadius="50">
+                <ContentPresenter x:Name="content" Content="{TemplateBinding Content}"></ContentPresenter>
+            </Border>
+        </ControlTemplate>
+
+    </UserControl.Resources>
+    <Grid  Background="#E6E6E6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="60"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Template="{StaticResource btnfile}"  x:Name="btnfiles" Grid.Column="0" VerticalAlignment="Center" Click="btnfiles_Click">
+            <Button.Content>
+                <svgc:SvgViewbox Width="28" Height="28" Source="../Resources/btnfile.svg">
+                </svgc:SvgViewbox>
+            </Button.Content>
+        </Button>
+        <local:BirdTextBox x:Name="tbmsg" MaxLength="300" Grid.Column="1" Width="Auto" Height="50" FontSize="10pt" DefaultText="Write a message..." KeyUp="tbmsg_KeyUp"></local:BirdTextBox>
+        <Button Template="{StaticResource btnmic}" Height="40" Width="40" x:Name="btnmic" Grid.Column="2" VerticalAlignment="Center" Click="btnmic_Click" MouseEnter="btnmic_MouseEnter" MouseLeave="btnmic_MouseLeave">
+            <Button.Content>
+                <svgc:SvgViewbox Width="28" Height="28" Source="../Resources/btnmic.svg">
+                </svgc:SvgViewbox>
+            </Button.Content>
+        </Button>
+    </Grid>
+</UserControl>

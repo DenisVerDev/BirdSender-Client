@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2221B69A-B730-4FA8-8FDA-D249733262EE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MessangerClient</RootNamespace>
+    <AssemblyName>MessangerClient</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\mybird32.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Converters.Wpf, Version=1.6.0.0, Culture=neutral, PublicKeyToken=b532964b8548be77, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.Reloaded.1.6.0\lib\net47\SharpVectors.Converters.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Core, Version=1.6.0.0, Culture=neutral, PublicKeyToken=7407205e337c98ef, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.Reloaded.1.6.0\lib\net47\SharpVectors.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Css, Version=1.6.0.0, Culture=neutral, PublicKeyToken=7a46e3f532fdb787, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.Reloaded.1.6.0\lib\net47\SharpVectors.Css.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Dom, Version=1.6.0.0, Culture=neutral, PublicKeyToken=517340b6277b1a7a, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.Reloaded.1.6.0\lib\net47\SharpVectors.Dom.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Model, Version=1.6.0.0, Culture=neutral, PublicKeyToken=2236cfc76b505845, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.Reloaded.1.6.0\lib\net47\SharpVectors.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Rendering.Gdi, Version=1.6.0.0, Culture=neutral, PublicKeyToken=03902092284347e3, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.Reloaded.1.6.0\lib\net47\SharpVectors.Rendering.Gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Rendering.Wpf, Version=1.6.0.0, Culture=neutral, PublicKeyToken=d0902381100df30e, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.Reloaded.1.6.0\lib\net47\SharpVectors.Rendering.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Runtime.Wpf, Version=1.6.0.0, Culture=neutral, PublicKeyToken=d16e717f0a981fb9, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.Reloaded.1.6.0\lib\net47\SharpVectors.Runtime.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AudioClass.cs" />
+    <Compile Include="Channel.cs" />
+    <Compile Include="ChannelSettings.xaml.cs">
+      <DependentUpon>ChannelSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chat.cs" />
+    <Compile Include="Controls\ChannelControl.xaml.cs">
+      <DependentUpon>ChannelControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChannelList.xaml.cs">
+      <DependentUpon>ChannelList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FileControl.xaml.cs">
+      <DependentUpon>FileControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InfoBar.xaml.cs">
+      <DependentUpon>InfoBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MessageControl.xaml.cs">
+      <DependentUpon>MessageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServiceControl.xaml.cs">
+      <DependentUpon>ServiceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserEnterMsg.xaml.cs">
+      <DependentUpon>UserEnterMsg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Group.cs" />
+    <Compile Include="GroupCreator.xaml.cs">
+      <DependentUpon>GroupCreator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KickWindow.xaml.cs">
+      <DependentUpon>KickWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LiveWindow.xaml.cs">
+      <DependentUpon>LiveWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LogRegModule\LogRegWindow.xaml.cs">
+      <DependentUpon>LogRegWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ChannelSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BirdTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChannelControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChannelList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FileControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\InfoBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MessageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ServiceControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TopBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UserEnterMsg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupCreator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KickWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LiveWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogRegModule\LogRegWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientResponse.cs" />
+    <Compile Include="Connected Services\MSGService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BirdTextBox.xaml.cs">
+      <DependentUpon>BirdTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TopBar.xaml.cs">
+      <DependentUpon>TopBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MessageSerializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Connected Services\MSGService\MessangerClient.MSGService.DownloadFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetGroupAvatarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetGroupInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetGroupUsersCountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetGroupUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetInvitesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetTotalNewMessagesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetUserAvatarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetUserOnlineStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MSGService\MessangerClient.MSGService.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MSGService\MessangerClient.MSGService.ResultCodes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MSGService\MessangerClient.MSGService.SearchUserByUserNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MSGService\MessangerClient.MSGService.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MSGService\MsgService.wsdl" />
+    <None Include="Connected Services\MSGService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MSGService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MSGService\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MSGService\service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mybird.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\closebtn.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\resizebtn.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hidebtn.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\MSGService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MSGService\service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MSGService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MSGService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MSGService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btngroup.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnappset.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnchat.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnsettings.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnphoto.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnfile.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnfile2.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnmic.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnmic2.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnmicpause.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnload.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btncancel.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnreload.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnfilemsg.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnplay.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnpause.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnaccount.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btncreategroup.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mybird32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btndemonstration.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnstreamcancel.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnstreamenter.svg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

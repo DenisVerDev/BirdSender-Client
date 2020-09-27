@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="MessangerClient.Controls.TopBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MessangerClient.Controls"
+             xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Height="32" MouseDown="topbar_MouseDown">
+    <UserControl.Resources>
+        <ResourceDictionary  Source="Dictionary1.xaml"></ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel Background="#E6E6E6">
+        <Label  x:Name="header"   Margin="8,0,0,0" FontFamily="Arial" Foreground="#00A99D" FontSize="14" VerticalAlignment="Center" Canvas.Top="-2">Test</Label>
+        <Button DockPanel.Dock="Right" Template="{StaticResource closetemplate}"  x:Name="btnclose" HorizontalAlignment="Right" Height="32" Width="32" Click="btnclose_Click">
+            <Button.Content>
+                <svgc:SvgViewbox Width="16" Height="16" Source="../Resources/closebtn.svg"></svgc:SvgViewbox>
+            </Button.Content>
+        </Button>
+        <Button DockPanel.Dock="Right" Template="{StaticResource topbartemplate}" x:Name="btnsizemode" HorizontalAlignment="Right"  Width="32" Height="32" Click="btnsizemode_Click">
+            <Button.Content>
+                <svgc:SvgViewbox Width="16" Height="16" Source="../Resources/resizebtn.svg"></svgc:SvgViewbox>
+            </Button.Content>
+        </Button>
+        <Button DockPanel.Dock="Right" Template="{StaticResource topbartemplate}" x:Name="btnhide" HorizontalAlignment="Right"  Width="32" Height="32" Click="btnhide_Click">
+            <Button.Content>
+                <svgc:SvgViewbox Width="16" Height="16" Source="../Resources/hidebtn.svg"></svgc:SvgViewbox>
+            </Button.Content>
+        </Button>
+    </DockPanel>
+</UserControl>

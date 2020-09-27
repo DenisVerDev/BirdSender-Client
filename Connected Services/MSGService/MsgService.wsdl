@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MsgService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IMSGService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://desktop/service?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://desktop/service?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://desktop/service?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MessangerServer" />
+      <xsd:import schemaLocation="http://desktop/service?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMSGService_Registration_InputMessage">
+    <wsdl:part name="parameters" element="tns:Registration" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_Registration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_SearchUserByUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUserByUserName" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_SearchUserByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUserByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_UploadUserAvatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadUserAvatar" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_UploadUserAvatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadUserAvatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_UploadGroupAvatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadGroupAvatar" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_UploadGroupAvatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadGroupAvatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetUserAvatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAvatar" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetUserAvatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAvatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetGroupAvatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupAvatar" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetGroupAvatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupAvatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetUserOnlineStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserOnlineStatus" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetUserOnlineStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserOnlineStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_AddChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddChat" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_AddChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_AddGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroup" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_AddGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetGroupUsersCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupUsersCount" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetGroupUsersCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupUsersCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetGroupInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetGroupInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_InviteToGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:InviteToGroup" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_InviteToGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InviteToGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_RemoveChannel_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveChannel" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_RemoveChannel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_LeaveGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveGroup" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_LeaveGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetGroupUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupUsers" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetGroupUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_RenameGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RenameGroup" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_RenameGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RenameGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_StartCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartCall" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_StartCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCall" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_StopCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopCall" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_StopCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_SendAudio_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendAudio" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_SendAudio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendAudioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_SendImages_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendImages" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_SendImages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_ConnectToCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConnectToCall" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_ConnectToCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConnectToCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_DisconnectFromCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisconnectFromCall" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_DisconnectFromCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisconnectFromCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_SendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_SendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_SendFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendFile" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_SendFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_DownloadFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_DownloadFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetTotalNewMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalNewMessages" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetTotalNewMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalNewMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetNewMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMessages" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetNewMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetInvites_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvites" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_GetInvites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_SubscribeToUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeToUser" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_SubscribeToUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeToUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_Disconnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Disconnect" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_ReceiveMessage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_HasConnectionToClient_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:HasConnectionToClient" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_HasConnectionToClient_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:HasConnectionToClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_ReceiveAudio_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveAudio" />
+  </wsdl:message>
+  <wsdl:message name="IMSGService_ReceiveImage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveImage" />
+  </wsdl:message>
+  <wsdl:portType name="IMSGService">
+    <wsdl:operation name="Registration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/Registration" message="tns:IMSGService_Registration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/RegistrationResponse" message="tns:IMSGService_Registration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/Login" message="tns:IMSGService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/LoginResponse" message="tns:IMSGService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserByUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/SearchUserByUserName" message="tns:IMSGService_SearchUserByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/SearchUserByUserNameResponse" message="tns:IMSGService_SearchUserByUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadUserAvatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/UploadUserAvatar" message="tns:IMSGService_UploadUserAvatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/UploadUserAvatarResponse" message="tns:IMSGService_UploadUserAvatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadGroupAvatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/UploadGroupAvatar" message="tns:IMSGService_UploadGroupAvatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/UploadGroupAvatarResponse" message="tns:IMSGService_UploadGroupAvatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAvatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/GetUserAvatar" message="tns:IMSGService_GetUserAvatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/GetUserAvatarResponse" message="tns:IMSGService_GetUserAvatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupAvatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/GetGroupAvatar" message="tns:IMSGService_GetGroupAvatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/GetGroupAvatarResponse" message="tns:IMSGService_GetGroupAvatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOnlineStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/GetUserOnlineStatus" message="tns:IMSGService_GetUserOnlineStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/GetUserOnlineStatusResponse" message="tns:IMSGService_GetUserOnlineStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/AddChat" message="tns:IMSGService_AddChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/AddChatResponse" message="tns:IMSGService_AddChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/AddGroup" message="tns:IMSGService_AddGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/AddGroupResponse" message="tns:IMSGService_AddGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupUsersCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/GetGroupUsersCount" message="tns:IMSGService_GetGroupUsersCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/GetGroupUsersCountResponse" message="tns:IMSGService_GetGroupUsersCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/GetGroupInfo" message="tns:IMSGService_GetGroupInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/GetGroupInfoResponse" message="tns:IMSGService_GetGroupInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InviteToGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/InviteToGroup" message="tns:IMSGService_InviteToGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/InviteToGroupResponse" message="tns:IMSGService_InviteToGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveChannel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/RemoveChannel" message="tns:IMSGService_RemoveChannel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/RemoveChannelResponse" message="tns:IMSGService_RemoveChannel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/LeaveGroup" message="tns:IMSGService_LeaveGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/LeaveGroupResponse" message="tns:IMSGService_LeaveGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/GetGroupUsers" message="tns:IMSGService_GetGroupUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/GetGroupUsersResponse" message="tns:IMSGService_GetGroupUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RenameGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/RenameGroup" message="tns:IMSGService_RenameGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/RenameGroupResponse" message="tns:IMSGService_RenameGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/StartCall" message="tns:IMSGService_StartCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/StartCallResponse" message="tns:IMSGService_StartCall_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/GetCall" message="tns:IMSGService_GetCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/GetCallResponse" message="tns:IMSGService_GetCall_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/StopCall" message="tns:IMSGService_StopCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/StopCallResponse" message="tns:IMSGService_StopCall_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAudio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/SendAudio" message="tns:IMSGService_SendAudio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/SendAudioResponse" message="tns:IMSGService_SendAudio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendImages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/SendImages" message="tns:IMSGService_SendImages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/SendImagesResponse" message="tns:IMSGService_SendImages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConnectToCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/ConnectToCall" message="tns:IMSGService_ConnectToCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/ConnectToCallResponse" message="tns:IMSGService_ConnectToCall_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisconnectFromCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/DisconnectFromCall" message="tns:IMSGService_DisconnectFromCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/DisconnectFromCallResponse" message="tns:IMSGService_DisconnectFromCall_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/SendMessage" message="tns:IMSGService_SendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/SendMessageResponse" message="tns:IMSGService_SendMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/SendFile" message="tns:IMSGService_SendFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/SendFileResponse" message="tns:IMSGService_SendFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/DownloadFile" message="tns:IMSGService_DownloadFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/DownloadFileResponse" message="tns:IMSGService_DownloadFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalNewMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/GetTotalNewMessages" message="tns:IMSGService_GetTotalNewMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/GetTotalNewMessagesResponse" message="tns:IMSGService_GetTotalNewMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/GetNewMessages" message="tns:IMSGService_GetNewMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/GetNewMessagesResponse" message="tns:IMSGService_GetNewMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvites">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/GetInvites" message="tns:IMSGService_GetInvites_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/GetInvitesResponse" message="tns:IMSGService_GetInvites_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeToUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/SubscribeToUser" message="tns:IMSGService_SubscribeToUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/SubscribeToUserResponse" message="tns:IMSGService_SubscribeToUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/Disconnect" message="tns:IMSGService_Disconnect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveMessage">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/ReceiveMessage" message="tns:IMSGService_ReceiveMessage_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HasConnectionToClient">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/HasConnectionToClient" message="tns:IMSGService_HasConnectionToClient_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMSGService/HasConnectionToClientResponse" message="tns:IMSGService_HasConnectionToClient_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveAudio">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/ReceiveAudio" message="tns:IMSGService_ReceiveAudio_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveImage">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMSGService/ReceiveImage" message="tns:IMSGService_ReceiveImage_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IMSGService" type="tns:IMSGService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IMSGService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Registration">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/Registration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserByUserName">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/SearchUserByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadUserAvatar">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/UploadUserAvatar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadGroupAvatar">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/UploadGroupAvatar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAvatar">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/GetUserAvatar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupAvatar">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/GetGroupAvatar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOnlineStatus">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/GetUserOnlineStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddChat">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/AddChat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/AddGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupUsersCount">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/GetGroupUsersCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupInfo">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/GetGroupInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InviteToGroup">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/InviteToGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveChannel">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/RemoveChannel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveGroup">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/LeaveGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupUsers">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/GetGroupUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenameGroup">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/RenameGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartCall">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/StartCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCall">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/GetCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopCall">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/StopCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAudio">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/SendAudio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendImages">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/SendImages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConnectToCall">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/ConnectToCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisconnectFromCall">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/DisconnectFromCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/SendMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendFile">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/SendFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalNewMessages">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/GetTotalNewMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMessages">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/GetNewMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvites">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/GetInvites" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeToUser">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/SubscribeToUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/Disconnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveMessage">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/ReceiveMessage" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasConnectionToClient">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/HasConnectionToClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveAudio">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/ReceiveAudio" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveImage">
+      <soap12:operation soapAction="http://tempuri.org/IMSGService/ReceiveImage" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MsgService">
+    <wsdl:port name="NetTcpBinding_IMSGService" binding="tns:NetTcpBinding_IMSGService">
+      <soap12:address location="net.tcp://192.168.1.20/MsgService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://192.168.1.20/MsgService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

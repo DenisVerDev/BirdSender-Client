@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="MessangerClient.Controls.ChannelControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MessangerClient.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Height="65">
+    <DockPanel x:Name="body"  Background="White" MouseEnter="body_MouseEnter" MouseLeave="body_MouseLeave" MouseDown="body_MouseDown">
+        <Ellipse Stretch="Fill" x:Name="avatar" Fill="#2BA69D" Height="50" Width="50" Margin="25,0,0,0"></Ellipse>
+        <StackPanel Orientation="Vertical" x:Name="channelinfo" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label x:Name="lbname" Foreground="#4ABFB6" FontSize="11pt" FontFamily="Arial" Margin="10,0,0,-5" FontWeight="Bold" Content="{Binding RelativeSource={RelativeSource AncestorType=local:ChannelControl},Path=ChannelName}"></Label>
+            <Label x:Name="lblast" Foreground="Black" FontSize="9pt" FontFamily="Arial" Margin="11,0,0,0" Content="{Binding RelativeSource={RelativeSource AncestorType=local:ChannelControl}, Path=LastMsg}"></Label>
+        </StackPanel>
+        <Border x:Name="val" Visibility="Hidden" HorizontalAlignment="Right" Margin="0,0,25,0" Background="#FFBE42" Height="25" Width="25" CornerRadius="50">
+            <Label x:Name="lbval" Foreground="White" FontSize="9pt" FontFamily="Arial" HorizontalAlignment="Center" VerticalAlignment="Center">0</Label>
+        </Border>
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://desktop/service?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MessangerServer" />
+  <xs:import schemaLocation="http://desktop/service?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="Registration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="user" nillable="true" type="q1:Users" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="RegistrationResult" type="q2:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="LoginResult" type="q3:ResultCodes" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="user" nillable="true" type="q4:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchUserByUserName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchUserByUserNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="SearchUserByUserNameResult" type="q5:ResultCodes" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="user" nillable="true" type="q6:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadUserAvatar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="img" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="isnew" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadUserAvatarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="UploadUserAvatarResult" type="q7:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadGroupAvatar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="img" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="isnew" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadGroupAvatarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="UploadGroupAvatarResult" type="q8:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAvatar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="position" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAvatarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="GetUserAvatarResult" type="q9:ResultCodes" />
+        <xs:element minOccurs="0" name="img" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupAvatar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="position" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupAvatarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="GetGroupAvatarResult" type="q10:ResultCodes" />
+        <xs:element minOccurs="0" name="img" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserOnlineStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserOnlineStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="GetUserOnlineStatusResult" type="q11:ResultCodes" />
+        <xs:element minOccurs="0" name="isonline" type="xs:boolean" />
+        <xs:element minOccurs="0" name="dateTime" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddChat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstuser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="seconduser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddChatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="AddChatResult" type="q12:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="groupname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="AddGroupResult" type="q13:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupUsersCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupUsersCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="GetGroupUsersCountResult" type="q14:ResultCodes" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="GetGroupInfoResult" type="q15:ResultCodes" />
+        <xs:element minOccurs="0" name="admin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="groupname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InviteToGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InviteToGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="InviteToGroupResult" type="q16:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveChannel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveChannelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="RemoveChannelResult" type="q17:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LeaveGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LeaveGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="LeaveGroupResult" type="q18:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="GetGroupUsersResult" type="q19:ResultCodes" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="user" nillable="true" type="q20:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="RenameGroupResult" type="q21:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="StartCallResult" type="q22:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="GetCallResult" type="q23:ResultCodes" />
+        <xs:element minOccurs="0" name="isstreaming" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="StopCallResult" type="q24:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendAudio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendAudioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="SendAudioResult" type="q25:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendImages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="isend" type="xs:boolean" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendImagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="SendImagesResult" type="q26:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConnectToCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConnectToCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="ConnectToCallResult" type="q27:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisconnectFromCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisconnectFromCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="DisconnectFromCallResult" type="q28:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="msg" nillable="true" type="q29:Message" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="SendMessageResult" type="q30:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filename" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="position" type="xs:long" />
+        <xs:element minOccurs="0" name="file" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="SendFileResult" type="q31:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filename" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="position" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="DownloadFileResult" type="q32:ResultCodes" />
+        <xs:element minOccurs="0" name="file" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTotalNewMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTotalNewMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="GetTotalNewMessagesResult" type="q33:ResultCodes" />
+        <xs:element minOccurs="0" name="total" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="GetNewMessagesResult" type="q34:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvites">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvitesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="GetInvitesResult" type="q35:ResultCodes" />
+        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="address" nillable="true" type="q36:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeToUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeToUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="SubscribeToUserResult" type="q37:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Disconnect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReceiveMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="msg" nillable="true" type="q38:Message" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasConnectionToClient">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasConnectionToClientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/MessangerServer" minOccurs="0" name="HasConnectionToClientResult" type="q39:ResultCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReceiveAudio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReceiveImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="isend" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

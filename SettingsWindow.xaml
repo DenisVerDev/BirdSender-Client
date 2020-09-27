@@ -1,0 +1,34 @@
+﻿<Window x:Class="MessangerClient.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MessangerClient"
+        xmlns:controls="clr-namespace:MessangerClient.Controls"
+        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+        mc:Ignorable="d"
+        Title="Settings" Height="280" Width="380" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False">
+    <Window.Resources>
+        <ResourceDictionary Source="Controls/Dictionary1.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <Border BorderBrush="LightGray" BorderThickness="1">
+        <StackPanel>
+        <controls:TopBar TopBarHeader="Account Info and settings"  VerticalAlignment="Top" ResizeMode="False" HideMode="False" CanMove="False"></controls:TopBar>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,15,5,0">
+            <Button x:Name="btnavatar"  VerticalAlignment="Top" Template="{StaticResource btncircleempty}" Width="100" Height="100" Click="btnavatar_Click">
+                    <Button.Content>
+                        <svgc:SvgViewbox Width="36" Height="36" Source="Resources/btnphoto.svg"></svgc:SvgViewbox>
+                    </Button.Content>
+            </Button>
+            <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                <Label  Foreground="#B3B3B3" FontFamily="Arial" FontSize="10pt" FontWeight="Bold">Username: </Label>
+                <Label x:Name="lbusername" Margin="72,0,0,0" Foreground="#B3B3B3" FontFamily="Arial" FontSize="10pt" Content="{Binding RelativeSource={RelativeSource AncestorType=local:SettingsWindow},Path=UserName}"></Label>
+            </StackPanel>
+            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                    <Label  Foreground="#B3B3B3" FontFamily="Arial" FontSize="10pt" FontWeight="Bold">Select input device:</Label>
+                    <ComboBox MaxWidth="200" Width="200" Margin="20,0,0,0" x:Name="inputdevices" ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=local:SettingsWindow},Path=InputDevices}" SelectedIndex="0" SelectionChanged="inputdevices_SelectionChanged"></ComboBox>
+            </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>

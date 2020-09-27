@@ -1,0 +1,31 @@
+﻿<Window x:Class="MessangerClient.GroupCreator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MessangerClient"
+        xmlns:controls="clr-namespace:MessangerClient.Controls"
+        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+        mc:Ignorable="d"
+        Title="Create group" Height="600" Width="450" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False">
+    <Window.Resources>
+        <ResourceDictionary Source="Controls/Dictionary1.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <Border Background="#6CC4C7" BorderBrush="LightGray" BorderThickness="1">
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top">
+                <controls:TopBar VerticalAlignment="Top" HideMode="False" CanMove="False" TopBarHeader="Create group" ResizeMode="False"></controls:TopBar>
+                <Button x:Name="btnavatar" HorizontalAlignment="Center" Margin="0,10,0,0"  VerticalAlignment="Top" Template="{StaticResource btncircleempty}" Width="100" Height="100" Click="btnavatar_Click">
+                    <Button.Content>
+                        <svgc:SvgViewbox Width="36" Height="36" Source="Resources/btnphoto.svg"></svgc:SvgViewbox>
+                    </Button.Content>
+                </Button>
+                <controls:BirdTextBox x:Name="tbname" MaxLength="25" Width="400" Height="30" DefaultText="Group name" FontSize="10pt" Margin="0,20,0,20"></controls:BirdTextBox>
+            </StackPanel>
+            <StackPanel Background="White">
+                <controls:ChannelList x:Name="userslist" MultiSelect="True" Width="450" Height="330"></controls:ChannelList>
+                <Button x:Name="btncreate" Template="{StaticResource birdbutton}" Margin="0,5,0,0" HorizontalAlignment="Center" Background="#4ABFB6" Foreground="White" FontFamily="Arial" FontSize="12pt" Width="122" Height="42" Content="Create group" Click="btncreate_Click"></Button>
+            </StackPanel>
+        </DockPanel>
+    </Border>
+</Window>

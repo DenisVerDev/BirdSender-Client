@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="MessangerClient.Controls.MessageControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MessangerClient.Controls"
+             mc:Ignorable="d" 
+             MaxWidth="430" MinHeight="40"  HorizontalAlignment="Left" Margin="80, 15, 0, 0">
+    <UserControl.Resources>
+        <ResourceDictionary Source="Dictionary1.xaml"></ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel>
+        <Border x:Name="body" Background="White" CornerRadius="8">
+            <Grid>
+                <Label x:Name="lbname"  VerticalAlignment="Top" Margin="5,2,4,4" FontWeight="Bold" Foreground="#B3B3B3" FontSize="10" FontFamily="Arial" Content="{Binding RelativeSource={RelativeSource AncestorType=local:MessageControl}, Path=Header}"></Label>
+                <DockPanel>
+                    <TextBox DockPanel.Dock="Left" MaxWidth="350" Template="{StaticResource textplace}" IsReadOnly="True" Margin="4,12,4,4" MaxLength="25" x:Name="tbtext" VerticalAlignment="Center" FontFamily="Arial" FontSize="10pt" TextWrapping="Wrap" Text="{Binding RelativeSource={RelativeSource AncestorType=local:MessageControl}, Path=Text}"></TextBox>
+                    <Label DockPanel.Dock="Bottom"  Margin="10,0,0,0"  x:Name="lbdate" Foreground="#B3B3B3" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontFamily="Arial" FontSize="7pt"></Label>
+                </DockPanel>
+            </Grid>
+        </Border>
+    </DockPanel>
+</UserControl>

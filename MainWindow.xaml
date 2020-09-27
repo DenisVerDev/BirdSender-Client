@@ -1,0 +1,30 @@
+﻿<Window x:Class="MessangerClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MessangerClient"
+        xmlns:controls="clr-namespace:MessangerClient.Controls"
+        mc:Ignorable="d"
+        Title="BirdSender" Height="450" Width="800" MinWidth="1200" MinHeight="500" WindowStartupLocation="CenterScreen" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" WindowStyle="None">
+    <Window.Resources>
+        <ResourceDictionary Source="Controls/Dictionary1.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <DockPanel Background="#F2F2F2">
+        <controls:TopBar TopBarHeader="BirdSender" ResizeMode="True" VerticalAlignment="Top" DockPanel.Dock="Top"></controls:TopBar>
+        
+        <DockPanel>
+            <controls:InfoBar x:Name="infobar" VerticalAlignment="Top" DockPanel.Dock="Top"></controls:InfoBar>
+            <controls:ChannelList x:Name="channellist" DockPanel.Dock="Left" HorizontalAlignment="Left"></controls:ChannelList>
+            <Border Width="1" HorizontalAlignment="Left" Background="#E6E6E6"></Border>
+            <Grid>
+                <ScrollViewer Margin="0,0,0,60" VerticalAlignment="Top"  x:Name="viewer" Template="{StaticResource scroll}"  HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <StackPanel  x:Name="msgcon" Orientation="Vertical" Background="#F2F2F2">
+                    </StackPanel>
+                </ScrollViewer>
+                <controls:UserEnterMsg x:Name="userentermsg" Visibility="Hidden" VerticalAlignment="Bottom"></controls:UserEnterMsg>
+            </Grid>
+        </DockPanel>
+        
+    </DockPanel>
+</Window>
