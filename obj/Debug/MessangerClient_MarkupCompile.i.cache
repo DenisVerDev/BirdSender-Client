@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\admin\Desktop\MyMessanger\MessangerClient\obj\Debug\
+D:\4й курс\2 semeter\TP\Course project\BirdSender-Client\obj\Debug\
 MessangerClient
 none
 false
 DEBUG;TRACE
-C:\Users\admin\Desktop\MyMessanger\MessangerClient\App.xaml
-17-2144241761
+D:\4й курс\2 semeter\TP\Course project\BirdSender-Client\App.xaml
+17-437002856
 
-281986014852
-271631520588
+28-361669616
+27-1762393724
 ChannelSettings.xaml;Controls\BirdTextBox.xaml;Controls\ChannelControl.xaml;Controls\ChannelList.xaml;Controls\FileControl.xaml;Controls\InfoBar.xaml;Controls\MessageControl.xaml;Controls\ServiceControl.xaml;Controls\TopBar.xaml;Controls\Dictionary1.xaml;Controls\UserEnterMsg.xaml;GroupCreator.xaml;KickWindow.xaml;LiveWindow.xaml;LogRegModule\LogRegWindow.xaml;MainWindow.xaml;SettingsWindow.xaml;
 
 False

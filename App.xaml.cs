@@ -8,7 +8,7 @@ using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Windows;
 using MessangerClient.LogRegModule;
-using MessangerClient.MSGService;
+using MessangerClient.ServiceReference;
 using NAudio.Wave;
 
 namespace MessangerClient

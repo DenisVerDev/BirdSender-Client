@@ -1,4 +1,4 @@
-﻿using MessangerClient.MSGService;
+﻿using MessangerClient.ServiceReference;
 using NAudio.Wave;
 using SharpVectors.Converters;
 using System;

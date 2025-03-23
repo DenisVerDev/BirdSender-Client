@@ -1,4 +1,4 @@
-﻿using MessangerClient.MSGService;
+﻿using MessangerClient.ServiceReference;
 using NAudio.Wave;
 using SharpVectors.Converters;
 using System;
@@ -186,9 +186,17 @@ namespace MessangerClient.Controls
                             switch (State)
                             {
                                 case InfoBar.ClickResult.Chats:
-                                    User user = null;
+                                    User1 user = null;
                                     if(!App.IsConnecting)App.Client.SearchUserByUserName(Name, out user);
-                                    if (SearchForUser != null) SearchForUser(user, false);
+                                    if (SearchForUser != null)
+                                    {
+                                        User dbUser = new User()
+                                        {
+                                            Username = Name
+                                        };
+
+                                        SearchForUser(dbUser, false);
+                                    }
                                     break;
                             }
                         }
