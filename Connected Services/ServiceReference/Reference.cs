@@ -22,22 +22,16 @@ namespace MessangerClient.ServiceReference {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> CreationDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> LastOnlineField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PasswordField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UsernameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -50,7 +44,7 @@ namespace MessangerClient.ServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(Name="CreationDate@", IsRequired=true)]
         public System.Nullable<System.DateTime> CreationDate {
             get {
                 return this.CreationDateField;
@@ -63,7 +57,7 @@ namespace MessangerClient.ServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(Name="Email@", IsRequired=true)]
         public string Email {
             get {
                 return this.EmailField;
@@ -76,7 +70,7 @@ namespace MessangerClient.ServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(Name="Id@", IsRequired=true)]
         public int Id {
             get {
                 return this.IdField;
@@ -89,7 +83,7 @@ namespace MessangerClient.ServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(Name="LastOnline@", IsRequired=true)]
         public System.Nullable<System.DateTime> LastOnline {
             get {
                 return this.LastOnlineField;
@@ -102,7 +96,7 @@ namespace MessangerClient.ServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(Name="Password@", IsRequired=true)]
         public string Password {
             get {
                 return this.PasswordField;
@@ -115,7 +109,7 @@ namespace MessangerClient.ServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(Name="Username@", IsRequired=true)]
         public string Username {
             get {
                 return this.UsernameField;
