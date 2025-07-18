@@ -12,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MessangerClient.MSGService;
+using MessangerClient.ServiceReference;
 
 namespace MessangerClient.LogRegModule
 {
@@ -22,7 +22,7 @@ namespace MessangerClient.LogRegModule
     public partial class LogRegWindow : Window
     {
 
-        Users NewUser { get; set; }
+        User NewUser { get; set; }
 
         enum LogRegState
         {
@@ -48,7 +48,7 @@ namespace MessangerClient.LogRegModule
         {
             InitializeComponent();
             State = LogRegState.Login;
-            NewUser = new Users()
+            NewUser = new User()
             {
                 Username = String.Empty,
                 Email = String.Empty,
@@ -249,7 +249,8 @@ namespace MessangerClient.LogRegModule
             await Task.Run(() => {
                 try
                 {
-                    User user;
+                    User dbUser;
+                    User1 user;
                     ResultCodes result = App.Client.Login(email, password, out user);
                     switch (result)
                     {
@@ -271,7 +272,14 @@ namespace MessangerClient.LogRegModule
 
                         case ResultCodes.Success:
                             this.Dispatcher.Invoke(() => {
-                                MainWindow mw = new MainWindow(user,true);
+                                dbUser = new User() {
+                                    Username = user.Username,
+                                    Email = email,
+                                    Password = password,
+                                    LastOnline = user.LastOnline,
+                                    Id = user.id
+                                };
+                                MainWindow mw = new MainWindow(dbUser, true);
                                 mw.Show();
                                 this.Close();
                             });

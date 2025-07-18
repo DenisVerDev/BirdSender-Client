@@ -1,5 +1,5 @@
 ﻿using MessangerClient.Controls;
-using MessangerClient.MSGService;
+using MessangerClient.ServiceReference;
 using System;
 using System.Collections.Generic;
 using System.IO;

@@ -17,8 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MessangerClient.Controls;
-using MessangerClient.MSGService;
-using Message = MessangerClient.MSGService.Message;
+using MessangerClient.ServiceReference;
+using Message = MessangerClient.ServiceReference.Message;
 
 namespace MessangerClient
 {
@@ -76,7 +76,7 @@ namespace MessangerClient
 
         }
 
-        private void ClientResponse_NewMessageCameOut(MSGService.Message msg)
+        private void ClientResponse_NewMessageCameOut(ServiceReference.Message msg)
         {
             Channel channel = channellist.Channels.Where(x => x.Address == msg.Address).FirstOrDefault();
             if(channel == null) //if this chat is new for client

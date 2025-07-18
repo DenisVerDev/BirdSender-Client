@@ -96,6 +96,11 @@
       <DependentUpon>ChannelSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Chat.cs" />
+    <Compile Include="Connected Services\ServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ChannelControl.xaml.cs">
       <DependentUpon>ChannelControl.xaml</DependentUpon>
     </Compile>
@@ -202,11 +207,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ClientResponse.cs" />
-    <Compile Include="Connected Services\MSGService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Controls\BirdTextBox.xaml.cs">
       <DependentUpon>BirdTextBox.xaml</DependentUpon>
     </Compile>
@@ -241,59 +241,65 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\MSGService\MessangerClient.MSGService.DownloadFileResponse.datasource">
+    <None Include="Connected Services\ServiceReference\MessangerClient.ServiceReference.DownloadFileResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetCallResponse.datasource">
+    <None Include="Connected Services\ServiceReference\MessangerClient.ServiceReference.GetCallResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetGroupAvatarResponse.datasource">
+    <None Include="Connected Services\ServiceReference\MessangerClient.ServiceReference.GetGroupAvatarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetGroupInfoResponse.datasource">
+    <None Include="Connected Services\ServiceReference\MessangerClient.ServiceReference.GetGroupInfoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetGroupUsersCountResponse.datasource">
+    <None Include="Connected Services\ServiceReference\MessangerClient.ServiceReference.GetGroupUsersCountResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetGroupUsersResponse.datasource">
+    <None Include="Connected Services\ServiceReference\MessangerClient.ServiceReference.GetGroupUsersResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetInvitesResponse.datasource">
+    <None Include="Connected Services\ServiceReference\MessangerClient.ServiceReference.GetInvitesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetTotalNewMessagesResponse.datasource">
+    <None Include="Connected Services\ServiceReference\MessangerClient.ServiceReference.GetTotalNewMessagesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetUserAvatarResponse.datasource">
+    <None Include="Connected Services\ServiceReference\MessangerClient.ServiceReference.GetUserAvatarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MSGService\MessangerClient.MSGService.GetUserOnlineStatusResponse.datasource">
+    <None Include="Connected Services\ServiceReference\MessangerClient.ServiceReference.GetUserOnlineStatusResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MSGService\MessangerClient.MSGService.LoginResponse.datasource">
+    <None Include="Connected Services\ServiceReference\MessangerClient.ServiceReference.LoginResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MSGService\MessangerClient.MSGService.ResultCodes.datasource">
+    <None Include="Connected Services\ServiceReference\MessangerClient.ServiceReference.ResultCodes.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MSGService\MessangerClient.MSGService.SearchUserByUserNameResponse.datasource">
+    <None Include="Connected Services\ServiceReference\MessangerClient.ServiceReference.SearchUserByUserNameResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MSGService\MessangerClient.MSGService.User.datasource">
+    <None Include="Connected Services\ServiceReference\MessangerClient.ServiceReference.User1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MSGService\MsgService.wsdl" />
-    <None Include="Connected Services\MSGService\service.xsd">
+    <None Include="Connected Services\ServiceReference\MSGService.wsdl" />
+    <None Include="Connected Services\ServiceReference\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\MSGService\service1.xsd">
+    <None Include="Connected Services\ServiceReference\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\MSGService\service2.xsd">
+    <None Include="Connected Services\ServiceReference\service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\MSGService\service3.xsd">
+    <None Include="Connected Services\ServiceReference\service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference\service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference\service5.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -319,24 +325,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\MSGService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\MSGService\service.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\MSGService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\MSGService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\MSGService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\btngroup.svg" />
@@ -403,6 +391,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\btnstreamenter.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference\service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
